@@ -1,0 +1,30 @@
+
+<div class="row social-media-row">
+    <div class="col-md-12">
+        <div class="btn-group btn-group-sm">
+            <ul class="social-media-buttons">
+                {% if 'twitter' in SHARING_METHODS %}
+                    <li><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" {% if TWITTER_USERNAME %}data-via="{{TWITTER_USERNAME}}"{% endif %}>Tweet</a></li>
+                {% endif %}
+                {% if 'facebook' in SHARING_METHODS %}
+                    <li><div class="fb-share-button" data-type="button_count"></div></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% if 'twitter' in SHARING_METHODS %}
+    <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+{% endif %}
+{% if 'facebook' in SHARING_METHODS %}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=175184656002590";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ {% endif %}
