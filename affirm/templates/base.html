@@ -6,19 +6,23 @@
         {% block favicon %}
         {% endblock %}
 
-        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        {% block scripts %}
+            <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/journal/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css" />
+            <!-- Bootstrap core CSS -->
+            <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/journal/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css" />
 
-        {% block additional_css %}
+            {% block additional_css %}
+            {% endblock %}
+
+            <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+            <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         {% endblock %}
 
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
         {% include 'disqus_script.html' %}
         {% include 'analytics.html' %}
+
 
         {% if FEED_ALL_ATOM %}
             <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />

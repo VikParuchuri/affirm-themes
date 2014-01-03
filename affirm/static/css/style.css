@@ -36,3 +36,7 @@ a.readmore:hover{
     text-shadow:none;
     color:#f8f8f8
 }
+
+div.posts{
+    padding-bottom: 20px;
+}

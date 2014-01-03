@@ -1,6 +1,8 @@
-{%- if not articles_page or first_article_of_day %}
-    <h4 class="date">{{ article.date.strftime("%b %e,  %G") }}</h4>
-{%- endif %}
+
+{% if counter > 1 %}
+    <hr/>
+{% endif %}
+<h4 class="date">{{ article.date.strftime("%b %e,  %G") }}</h4>
 
 <div class="post">
     {% if article['title'] -%}
